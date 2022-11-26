@@ -21,18 +21,18 @@ const AuthProvider = ({ children }) => {
             .then(result => {
                 // console.log(result.user);
                 const user = result.user;
-                const userData = { name: user.displayName, photo: user.photoURL, email: user.email, password: null, seller: false, admin: false };
-                // fetch("http://localhost:5000/setUser", {
-                //     method: 'POST',
-                //     headers: {
-                //         'content-type': 'application/json'
-                //     },
-                //     body: JSON.stringify(userData)
-                // })
-                //     .then(res => res.json())
-                //     .then(data => {
-                //         // console.log(data)
-                //     })
+                const userData = { name: user.displayName, photo: user.photoURL, email: user.email, password: null, seller: false, admin: false, verified: false };
+                fetch("http://localhost:5000/setUser", {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(userData)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        // console.log(data)
+                    })
             })
             .catch(error => console.error(error))
     }
