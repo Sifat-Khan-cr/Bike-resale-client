@@ -21,6 +21,7 @@ const router = createBrowserRouter([
                 element: <Signup></Signup>
             },
         ]
+
     }
 ])
 export default router;
