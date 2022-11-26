@@ -5,14 +5,14 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Login = () => {
 
-    const location = useLocation();
-    const from = location.state?.from?.pathname || "/";
+    // const location = useLocation();
+    // const from = location.state?.from?.pathname || "/";
 
 
 
     const navigate = useNavigate();
 
-    const { googleHandler, login } = useContext(AuthContext);
+    const { googleHandler, login, loading } = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -25,13 +25,15 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
-                navigate(from, { replace: true });
+                // navigate(from, { replace: true });
             })
             .then(error => console.log(error));
     }
 
     return (
         <div>
+            {loading && <h1 className='text-6xl text-center'>Loading......</h1>}
+
 
             <div className="hero w-full my-20">
                 <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
@@ -51,7 +53,7 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="text" name='password' placeholder="password" className="input input-bordered" />
+                                <input type="password" name='password' placeholder="password" className="input input-bordered" />
 
                             </div>
                             <div className="form-control mt-6">

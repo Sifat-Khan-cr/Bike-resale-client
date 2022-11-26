@@ -19,6 +19,20 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         signInWithPopup(auth, googleAuthProvider)
             .then(result => {
+                // console.log(result.user);
+                const user = result.user;
+                const userData = { name: user.displayName, photo: user.photoURL, email: user.email, password: null, seller: false, admin: false };
+                // fetch("http://localhost:5000/setUser", {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(userData)
+                // })
+                //     .then(res => res.json())
+                //     .then(data => {
+                //         // console.log(data)
+                //     })
             })
             .catch(error => console.error(error))
     }
@@ -44,6 +58,7 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            // console.log(user);
             setLoading(false);
         });
         return () => {
