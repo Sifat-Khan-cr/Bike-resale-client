@@ -37,7 +37,7 @@ const PostAdd = () => {
         })
             .then(res => res.json())
             .then(data => {
-                const productData = { productName: productName, category: category, location: location, newPrice: newPrice, askingPrice: askingPrice, usageYear: usageYear, sellerName: name, sellerEmail: email, productPhoto: data.data.display_url, advertized: false, sellerVerified: false, postDate: postDate };
+                const productData = { productName: productName, category: category, location: location, newPrice: newPrice, askingPrice: askingPrice, usageYear: usageYear, sellerName: name, sellerEmail: email, productPhoto: data.data.display_url, advertized: false, booked: false, sellerVerified: false, postDate: postDate };
                 form.reset();
                 // console.log(productData)
                 fetch("http://localhost:5000/products", {

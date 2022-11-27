@@ -1,20 +1,29 @@
 import React from 'react';
 
 const ProductCard = ({ dat }) => {
+    const { productPhoto, productName, location, newPrice, askingPrice, usageYear, sellerName, sellerEmail, sellerVerified, postDate, booked } = dat;
     console.log(dat);
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src={dat.productPhoto} alt="Shoes" /></figure>
+            <figure><img className='h-64' src={productPhoto} alt="Product" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
-                    {dat.productName}
-                    <div className="badge badge-secondary">NEW</div>
+                    {productName}
+                    {
+                        sellerVerified && <div className="badge badge-secondary">VERIFIED</div>
+                    }
+                    {
+                        booked && <div className="badge badge-primary">Booked</div>
+                    }
+
                 </h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
-                </div>
+                <p className='text-sm'>Posted : {postDate}</p>
+                <p >Posted By : {sellerName}</p>
+                <p >Email : {sellerEmail}</p>
+                <p >Asking Price : ${askingPrice}</p>
+                <p >Showroom Price : ${newPrice}</p>
+                <p >Used : {usageYear} year</p>
+                <p >Location : {location}</p>
             </div>
         </div>
     );

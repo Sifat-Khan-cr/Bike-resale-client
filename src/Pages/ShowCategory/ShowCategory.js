@@ -14,10 +14,15 @@ const ShowCategory = () => {
     }
     // console.log(category);
     return (
+
         <div>
-            {
-                data.map(dat => <ProductCard key={dat._id} category={category} dat={dat}></ProductCard>)
-            }
+            <h1 className='text-4xl text-center text-primary font-semibold mt-10'>All {category}</h1>
+
+            <div className='grid my-10 mx-auto lg:grid-cols-2 w-4/5'>
+                {
+                    data.map(dat => <ProductCard key={dat._id} category={category} dat={dat}></ProductCard>)
+                }
+            </div>
         </div>
     );
 };
