@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
-import { json } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const PostAdd = () => {
+    const notify = () => toast('Here is your toast.');
     const date = new Date();
     const { user } = useContext(AuthContext);
     const handleSignUp = event => {
@@ -18,7 +19,6 @@ const PostAdd = () => {
         const postDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 
         let category = "";
-        // console.log(form.category.value);
         if (form.category.value === "Bike") {
             category = "01";
         } else if (form.category.value === "E-Bike") {
@@ -49,7 +49,10 @@ const PostAdd = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
+
+                        if (data.acknowledged) {
+                            toast.success("Posted Succesfully")
+                        }
                     })
 
 
@@ -64,7 +67,7 @@ const PostAdd = () => {
     }
     return (
         <div>
-            <h1>this is for add posting</h1>
+            <h1 className='text-4xl text-center text-primary font-semibold mt-10'>Post Your Add</h1>
             <form onSubmit={handleSignUp} className="card-body w-6/12 mx-auto">
                 <div className="form-control">
                     <label className="label">
