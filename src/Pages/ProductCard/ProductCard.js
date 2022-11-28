@@ -4,7 +4,7 @@ const ProductCard = ({ dat, setBike }) => {
     const { productPhoto, productName, location, newPrice, askingPrice, usageYear, sellerName, sellerEmail, sellerVerified, postDate, booked } = dat;
     // console.log(dat);
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-96 bg-base-100 shadow-lg mb-10">
             <figure><img className='h-64' src={productPhoto} alt="Product" /></figure>
             <div className="card-body">
                 <h2 className="card-title">

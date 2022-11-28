@@ -5,8 +5,8 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Login = () => {
 
-    // const location = useLocation();
-    // const from = location.state?.from?.pathname || "/";
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
 
 
@@ -25,7 +25,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
-                // navigate(from, { replace: true });
+                navigate(from, { replace: true });
             })
             .then(error => console.log(error));
     }

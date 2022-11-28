@@ -8,6 +8,7 @@ import PostAdd from "../Pages/PostAdd/PostAdd";
 import Error404 from "../Pages/Shared/Error404/Error404";
 import ShowCategory from "../Pages/ShowCategory/ShowCategory";
 import Signup from "../Pages/SignUp/Signup";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
             {
                 path: '/products/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`),
-                element: <ShowCategory></ShowCategory>
+                element: <PrivateRoute><ShowCategory></ShowCategory></PrivateRoute>
             },
             {
                 path: '*',
@@ -37,11 +38,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard',
-                element: <DashBorad></DashBorad>
+                element: <PrivateRoute><DashBorad></DashBorad></PrivateRoute>
             },
             {
                 path: '/postadd',
-                element: <PostAdd></PostAdd>
+                element: <PrivateRoute><PostAdd></PostAdd></PrivateRoute>
             },
             {
                 path: '/blog',

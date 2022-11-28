@@ -12,7 +12,7 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         const seller = form.seller.checked;
-        const userData = { name: name, email: email, password: password, seller: seller, admin: false, photo: null, verified: false }
+        const userData = { name: name, email: email, seller: seller, admin: false, photo: null, verified: false }
         // console.log(userData);
         // return;
 
