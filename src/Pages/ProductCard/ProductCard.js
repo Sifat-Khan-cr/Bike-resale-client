@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductCard = ({ dat, setBike }) => {
+const ProductCard = ({ dat, setBike, home }) => {
     const { productPhoto, productName, location, newPrice, askingPrice, usageYear, sellerName, sellerEmail, sellerVerified, postDate, booked, advertized } = dat;
     // console.log(dat);
     return (
@@ -28,7 +28,9 @@ const ProductCard = ({ dat, setBike }) => {
                 <p >Used : {usageYear} year</p>
                 <p >Location : {location}</p>
             </div>
-            <label onClick={() => setBike(dat)} htmlFor="bike-modal" className={`btn btn-primary w-6/12 mx-auto my-5`}>{booked ? "Already Booked" : "Book Now"}</label>
+            {
+                !home && <label onClick={() => setBike(dat)} htmlFor="bike-modal" className={`btn btn-primary w-6/12 mx-auto my-5`}>{booked ? "Already Booked" : "Book Now"}</label>
+            }
         </div>
     );
 };

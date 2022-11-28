@@ -6,6 +6,7 @@ import CategoryCard from './CategoryCard/CategoryCard';
 const Home = () => {
     const category = useLoaderData();
     const [advertized, setAdvertized] = useState([]);
+    const home = true;
     useEffect(() => {
         fetch('http://localhost:5000/advertized')
             .then(res => res.json())
@@ -27,7 +28,7 @@ const Home = () => {
                     <h1 className='text-4xl text-center text-primary font-semibold mt-10'>Advertized Products</h1>
                     <div className='grid my-10 mx-auto lg:grid-cols-3 w-4/5'>
                         {
-                            advertized.map(dat => <ProductCard key={dat._id} dat={dat}></ProductCard>)
+                            advertized.map(dat => <ProductCard key={dat._id} dat={dat} home={home}></ProductCard>)
                         }
                     </div>
                 </>

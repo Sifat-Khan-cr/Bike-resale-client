@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthProvider, { AuthContext } from './Context/AuthProvider/AuthProvider';
 import { Toaster } from 'react-hot-toast';
+import Authorization from './Context/AuthProvider/Authorization/Authorization';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthProvider>
+      {/* <Authorization> */}
       <Toaster />
       <App />
+      {/* </Authorization> */}
     </AuthProvider>
 
   </React.StrictMode>
