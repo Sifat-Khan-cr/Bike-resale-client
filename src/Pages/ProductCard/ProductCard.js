@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProductCard = ({ dat, setBike }) => {
-    const { productPhoto, productName, location, newPrice, askingPrice, usageYear, sellerName, sellerEmail, sellerVerified, postDate, booked } = dat;
+    const { productPhoto, productName, location, newPrice, askingPrice, usageYear, sellerName, sellerEmail, sellerVerified, postDate, booked, advertized } = dat;
     // console.log(dat);
     return (
         <div className="card w-96 bg-base-100 shadow-lg mb-10">
@@ -14,6 +14,9 @@ const ProductCard = ({ dat, setBike }) => {
                     }
                     {
                         booked && <div className="badge badge-primary">Booked</div>
+                    }
+                    {
+                        advertized && <div className="badge badge-bg-purple">Advertized</div>
                     }
 
                 </h2>
