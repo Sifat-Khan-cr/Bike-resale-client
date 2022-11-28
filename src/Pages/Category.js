@@ -9,7 +9,7 @@ const Category = () => {
         const image = form.image.value;
         const data = { category_name: name, category_id: id, image: image }
         // console.log(data);
-        fetch("http://localhost:5000/add", {
+        fetch("https://sifat-bikes-server.vercel.app/add", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

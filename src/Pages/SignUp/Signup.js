@@ -26,7 +26,7 @@ const SignUp = () => {
 
 
 
-        fetch("http://localhost:5000/setUser", {
+        fetch("https://sifat-bikes-server.vercel.app/setUser", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
