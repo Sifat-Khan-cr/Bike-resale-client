@@ -21,7 +21,6 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal p-0">
                         <button className="btn  btn-secondary my-3 mr-3"><li><Link to={"/blog"}>Blog</Link></li></button>
                         <button className="btn  btn-secondary my-3 mr-3"><li><Link to={"/dashboard"}>Dashboard</Link></li></button>
-                        <button className="btn  btn-secondary my-3 mr-3"><li><Link to={"/postadd"}>PostAdd</Link></li></button>
                         {
 
                             user?.email ? <>

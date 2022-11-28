@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const DashBorad = () => {
@@ -26,7 +27,7 @@ const DashBorad = () => {
                 admin && <h1>admin</h1>
             }
             {
-                seller && <h1>seller</h1>
+                seller && <Link to="/dashboard/postadd">Post Add</Link>
             }
             {
                 verified && <h1>verified</h1>
