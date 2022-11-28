@@ -1,13 +1,15 @@
 import React from 'react';
 
-const AllSellerTable = ({ pro }) => {
+const AllSellerTable = ({ pro, buyer }) => {
     const { name, email, verified } = pro;
 
     return (
         <tr>
             <td>{name}</td>
             <td>{email}</td>
-            <td>{verified ? "yes" : "No"}</td>
+            {
+                buyer ? <></> : <td>{verified ? "yes" : "No"}</td>
+            }
         </tr>
     );
 };
