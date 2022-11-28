@@ -6,7 +6,7 @@ const MyProducts = () => {
     const { user } = useContext(AuthContext);
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${user.email}`)
+        fetch(`https://sifat-bikes-server.vercel.app/product/${user.email}`)
             .then(res => res.json())
             .then(data => setProducts(data))
         // .then(data => console.log(data.length))

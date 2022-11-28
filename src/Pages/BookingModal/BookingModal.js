@@ -13,7 +13,7 @@ const BookingModal = ({ bike }) => {
             return;
 
         } else {
-            fetch(`http://localhost:5000/booking/${_id}`, {
+            fetch(`https://sifat-bikes-server.vercel.app/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

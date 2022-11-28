@@ -8,7 +8,7 @@ const Home = () => {
     const [advertized, setAdvertized] = useState([]);
     const home = true;
     useEffect(() => {
-        fetch('http://localhost:5000/advertized')
+        fetch('https://sifat-bikes-server.vercel.app/advertized')
             .then(res => res.json())
             .then(data => setAdvertized(data))
         // .then(data => console.log(data.length))

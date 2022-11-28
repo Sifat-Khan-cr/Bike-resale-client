@@ -30,7 +30,7 @@ const PostAdd = () => {
         const picture = form.picture.files[0];
         const formData = new FormData();
         formData.append('image', picture);
-        const url = `https://api.imgbb.com/1/upload?key=2e1633570690000198d934cfa16d3520`;
+        const url = `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_imgbb}`;
         fetch(url, {
             method: 'post',
             body: formData,
@@ -40,7 +40,7 @@ const PostAdd = () => {
                 const productData = { productName: productName, category: category, location: location, newPrice: newPrice, askingPrice: askingPrice, usageYear: usageYear, sellerName: name, sellerEmail: email, productPhoto: data.data.display_url, advertized: false, booked: false, sellerVerified: false, postDate: postDate };
                 form.reset();
                 // console.log(productData)
-                fetch("http://localhost:5000/products", {
+                fetch("https://sifat-bikes-server.vercel.app/products", {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

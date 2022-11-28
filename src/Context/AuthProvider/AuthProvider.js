@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
                 // console.log(result.user);
                 const user = result.user;
                 const userData = { name: user.displayName, photo: user.photoURL, email: user.email, password: null, seller: false, admin: false, verified: false };
-                fetch("http://localhost:5000/setUser", {
+                fetch("https://sifat-bikes-server.vercel.app/setUser", {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

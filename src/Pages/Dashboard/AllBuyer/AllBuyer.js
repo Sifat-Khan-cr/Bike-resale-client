@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import AllSellerTable from '../AllSeller/AllSellerTable';
 // import AllSellerTable from './AllSellerTable'
 
 
 
 const AllBuyer = () => {
-    const [products, setProducts] = useState([]);
+    const products = useLoaderData();
     const buyer = true;
-    useEffect(() => {
-        fetch('http://localhost:5000/buyer')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-        // .then(data => console.log(data.length))
-    }, []);
     return (
         <div>
             <h1 className='text-4xl text-center text-primary font-semibold my-10'>All Buyers</h1>
