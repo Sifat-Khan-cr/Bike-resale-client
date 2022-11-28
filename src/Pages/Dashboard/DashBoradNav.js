@@ -35,7 +35,7 @@ const DashBoradNav = () => {
             }
             {
                 admin && <>
-                    <button className="btn btn-sm mx-3 btn-primary"><Link to={'#'}>All Sellers</Link></button>
+                    <button className="btn btn-sm mx-3 btn-primary"><Link to={'/dashboard/allseller'}>All Sellers</Link></button>
                     <button className="btn btn-sm mx-3 btn-primary"><Link to={'#'}>All Buyers</Link></button>
                 </>
             }

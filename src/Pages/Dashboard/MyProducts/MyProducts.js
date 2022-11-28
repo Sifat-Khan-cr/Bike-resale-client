@@ -13,7 +13,7 @@ const MyProducts = () => {
     }, [user]);
     return (
         <div>
-            <h1 className='text-4xl text-center text-primary font-semibold my-10'>My Products{products.length}</h1>
+            <h1 className='text-4xl text-center text-primary font-semibold my-10'>My Products</h1>
 
             <div className="overflow-x-auto my-10">
                 <table className="table w-full">
@@ -22,6 +22,8 @@ const MyProducts = () => {
                         <tr>
                             <th>Product Name</th>
                             <th>Seller Name</th>
+                            <th>Advertized</th>
+                            <th>Booked</th>
                             <th>Date Posted</th>
                         </tr>
                     </thead>
